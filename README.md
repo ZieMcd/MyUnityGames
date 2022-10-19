@@ -1,2 +1,2 @@
 # MyUnityGames
-Theese are the games I've tried to make with the unity game engine 
+A few throw away projects I made using the unity game engine.
