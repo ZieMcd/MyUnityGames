@@ -40,7 +40,7 @@ public class DrawVertices : MonoBehaviour
         foreach (var point in points)
         {
             Gizmos.color = Color.magenta;
-            Gizmos.DrawSphere(new Vector3(point.X, vertices[0].y, point.Z), 0.5f);
+            Gizmos.DrawSphere(new Vector3(point.X, vertices[0].y, point.Z), 0.1f);
         }
     }
 }

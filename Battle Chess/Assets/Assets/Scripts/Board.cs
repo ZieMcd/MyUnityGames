@@ -11,9 +11,13 @@ public class Board : MonoBehaviour
 
     private void Awake()
     {
+        CreateTiles();
+    }
+
+    void CreateTiles()
+    {
         _vertices = GetComponent<MeshFilter>().sharedMesh.vertices.ToList();
         _transform = GetComponent<Transform>();
-
         
         var lenghtX = _vertices[0].x - _vertices[10].x;
         var lengthZ = _vertices[0].z - _vertices[110].z;
@@ -31,17 +35,5 @@ public class Board : MonoBehaviour
             
             plane.transform.localScale = new Vector3(scaleX , _transform.localScale.y, scaleZ );
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
