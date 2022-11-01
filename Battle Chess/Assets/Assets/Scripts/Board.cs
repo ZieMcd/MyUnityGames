@@ -9,16 +9,16 @@ public class Board : MonoBehaviour
     private List<Vector3> _vertices;
     private Transform _transform;
 
-    private void Awake()
-    {
-        CreateTiles();
-    }
-
-    void CreateTiles()
+    public void CreateTiles()
     {
         _vertices = GetComponent<MeshFilter>().sharedMesh.vertices.ToList();
         _transform = GetComponent<Transform>();
-        
+
+        while (transform.childCount > 0)
+        {
+            DestroyImmediate(transform.GetChild(0).gameObject);
+        }
+
         var lenghtX = _vertices[0].x - _vertices[10].x;
         var lengthZ = _vertices[0].z - _vertices[110].z;
         

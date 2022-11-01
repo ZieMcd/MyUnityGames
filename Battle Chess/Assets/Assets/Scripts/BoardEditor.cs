@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿using System;
+using UnityEditor;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -8,8 +10,11 @@ namespace Assets.Scripts
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();
-
             var board = (Board)target;
+            if (GUILayout.Button("Create tiles"))
+            {
+                board.CreateTiles();
+            }
         }
     }
 }
